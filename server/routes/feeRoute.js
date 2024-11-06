@@ -3,7 +3,7 @@ const FeeDetail = require('../models/feeDetailModel');
 const jwt = require('jsonwebtoken');
 const authenticateJWT = require('../middlewares/authMiddleware');
 const students = require('../models/rollDobModel');
-const formatDate = require('../Utils/formatDate');
+const formatDate = require('../utils/formatDate');
 const router = express.Router();
 
 const SECRET_KEY = process.env.SECRET_KEY;
