@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const connectDB = require('./config/db');
-const limiter = require('./Middlewares/rateLimitMiddleware');
+const limiter = require('./middlewares/rateLimitMiddleware');
 const rollRoutes = require('./routes/rollRoute');
 const dobRoutes = require('./Routes/dobRoute');
 const feeRoutes = require('./Routes/feeRoute');
