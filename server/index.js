@@ -4,9 +4,9 @@ const cors = require('cors');
 const connectDB = require('./config/db');
 const limiter = require('./middlewares/rateLimitMiddleware');
 const rollRoutes = require('./routes/rollRoute');
-const dobRoutes = require('./Routes/dobRoute');
-const feeRoutes = require('./Routes/feeRoute');
-const paymentRoutes = require('./Routes/paymentRoute');
+const dobRoutes = require('./routes/dobRoute');
+const feeRoutes = require('./routes/feeRoute');
+const paymentRoutes = require('./routes/paymentRoute');
 
 const app = express();
 const PORT = process.env.PORT || 8000;
