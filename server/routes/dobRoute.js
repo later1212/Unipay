@@ -1,7 +1,7 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const validate = require('../models/rollDobModel');
-const logEntry = require('../utils/logUtil');
+const logEntry = require('../utils/logutil');
 const formatDate = require('../utils/formatDate');
 const validateInput = require('../middlewares/validateInputMiddleware');
 
