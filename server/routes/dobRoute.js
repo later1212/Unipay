@@ -1,8 +1,8 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const validate = require('../models/rollDobModel');
-const logEntry = require('../utils/logutil');
-const formatDate = require('../utils/formatDate');
+const logEntry = require('../Utils/logUtil');
+const formatDate = require('../Utils/formatDate');
 const validateInput = require('../middlewares/validateInputMiddleware');
 
 const router = express.Router();
