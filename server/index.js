@@ -9,6 +9,7 @@ const feeRoutes = require('./Routes/feeRoute');
 const paymentRoutes = require('./Routes/paymentRoute');
 
 const app = express();
+const PORT = process.env.PORT || 8000;
 
 // CORS configuration
 const corsOptions = {
@@ -18,16 +19,20 @@ const corsOptions = {
   optionsSuccessStatus: 200
 };
 
+// Handle preflight requests
+app.options('*', cors(corsOptions)); // Preflight requests are always OPTIONS
+
 // Apply CORS and JSON body parser middleware
-app.options('*', cors(corsOptions)); // Preflight requests
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(limiter);
 
-// Connect to the database
 connectDB();
+app.get('/', (req, res) => {
+  res.json("Hello");
+});
 
-// Define routes
+
 app.use('/v1/api/roll', rollRoutes);
 app.use('/v1/api/dob', dobRoutes);
 app.use('/v1/api/fee', feeRoutes);
@@ -36,5 +41,3 @@ app.use("/v1/api/razor/getkey", (req, res) =>
   res.status(200).json({ key: process.env.RAZORPAY_API_KEY })
 );
 
-// Export the app for Vercel to use as a serverless function
-module.exports = app;
