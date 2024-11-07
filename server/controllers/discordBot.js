@@ -14,9 +14,6 @@ const client = new Client({
     partials: ['CHANNEL'],
 });
 
-client.on('ready', () => {
-    console.log(`Logged in as ${client.user.tag}!`);
-});
 
 const FEE_NOTIFY_CHANNEL_ID = process.env.FEE_NOTIFY_CHANNEL_ID;
 const VERIFIED_CHANNEL_ID = process.env.VERIFIED_CHANNEL_ID;
